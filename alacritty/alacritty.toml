@@ -1,0 +1,42 @@
+[general]
+
+import = [
+	"/Users/guilhermejose/.config/alacritty/themes/themes/ayu_dark.toml"
+]
+
+# Update configuration everytime this file is saved
+live_config_reload = true
+
+
+[window]
+
+# Remove the bar on the top (MacOS specific)
+decorations = "Buttonless"
+
+opacity = 1.0
+padding = { x = 10, y = 0 }
+dynamic_title = true
+option_as_alt = "OnlyLeft"   
+
+[font]
+size = 16.0
+offset = { y = 0 }
+
+[font.normal]
+family = "JetBrainsMono Nerd Font"
+style = "Regular"
+
+[font.bold]
+family = "JetBrainsMono Nerd Font"
+style = "Bold"
+
+[font.italic]
+family = "JetBrainsMono Nerd Font"
+style = "Italic"
+
+[env]
+TERM = "xterm-256color"
+
+[cursor]
+style = { shape = "Block", blinking = "Off"}
+

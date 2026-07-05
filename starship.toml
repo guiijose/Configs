@@ -1,0 +1,35 @@
+# Insert a blank line between commands
+add_newline = true
+
+# Replace the "package" style with just the symbol
+[package]
+disabled = true
+
+# The Character (The Arrow)
+[character]
+success_symbol = "[\\$](bold green)"
+error_symbol   = "[\\$](bold red)"
+
+# Git settings (Show branch icon)
+[git_branch]
+symbol = " "
+style = "bold #ff69b4"
+
+# Directory settings
+[directory]
+style = "blue"
+truncation_length = 3
+truncate_to_repo = false
+
+# Hide the "via Docker" stuff unless you want it
+[docker_context]
+disabled = true
+
+[aws]
+disabled = true
+
+[gcloud]
+disabled = true
+
+[azure]
+disabled = true
