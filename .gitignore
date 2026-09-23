@@ -1,0 +1,14 @@
+cagent/
+clangd/
+exercism/
+fish/
+gcloud/
+git/
+github-copilot/
+nvim/test.lua
+nvim/test_devcontainers.lua
+nvim/test_docker.lua
+rstudio/
+uv/
+wireshark/
+zed/

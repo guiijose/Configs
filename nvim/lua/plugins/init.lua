@@ -1,5 +1,9 @@
 return {
   {
+    "nvim-treesitter/nvim-treesitter",
+    branch = "main",
+  },
+  {
     "hrsh7th/nvim-cmp",
     opts = function(_, opts)
       opts.sources = opts.sources or {}
@@ -44,8 +48,11 @@ return {
   },
 
   {
-	  "lspcontainers/lspcontainers.nvim",
-	  lazy = true,
+    "jedrzejboczar/devcontainers.nvim",
+    dependencies = {
+      "miversen33/netman.nvim", -- Allows opening files that only exist inside the container
+    },
+    opts = {}, -- Calls setup() with default options
   },
 
   {
