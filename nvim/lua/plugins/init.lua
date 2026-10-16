@@ -111,7 +111,9 @@ return {
     ft = "java",
   },
   {
-    "ThePrimeagen/vim-be-good",
-    cmd = "VimBeGood",
+    "lewis6991/gitsigns.nvim",
+    opts = {
+      current_line_blame = true, -- Enables inline git blame
+    },
   },
 }

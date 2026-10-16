@@ -5,6 +5,8 @@ typedef long long ll;
 const ll INF = 1e18;
 const ll MOD = 1e9 + 7;
 
+bool multiple_tests = false;
+
 void solution() {
 
 }
@@ -14,13 +16,15 @@ int main() {
     cin.tie(nullptr);
     cout.tie(nullptr);
 
-	/*
-    long long t;
-    cin >> t;
-    for (int i = 0; i < t; i++){
+    if (multiple_tests) {
+        ll t;
+        cin >> t;
+        for (int i = 0; i < t; i++){
+            solution();
+        }
+    } else {
         solution();
     }
-	*/
     
 	solution();
     return 0;

@@ -8,7 +8,7 @@ require "nvchad.options"
 
 vim.opt.tabstop = 4 -- number of spaces per tab characters
 vim.opt.shiftwidth = 4 -- indentation width
-vim.opt.expandtab = false -- use real tab characters
+vim.opt.expandtab = true -- use real tab characters
 vim.opt.smartindent = true
 vim.opt.exrc = true -- look for configurations in opened root (.nvim.lua)
 vim.opt.gdefault = true -- fix :%s/old/new/g
