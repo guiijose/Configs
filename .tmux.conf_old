@@ -1,0 +1,103 @@
+# ==========================
+# ===   General Settings ===
+# ==========================
+
+# Enable mouse support (clickable windows, panes, resizable panes)
+set -g mouse on
+
+# Set scrollback history to 50k lines
+set-option -g history-limit 50000
+
+# Fix colors and enable True Color support
+set -g default-terminal "screen-256color"
+set-option -sa terminal-overrides ",xterm*:Tc"
+
+# Start windows and panes at index 1, not 0
+set -g base-index 1
+setw -g pane-base-index 1
+
+# Renumber windows automatically when one is closed
+set -g renumber-windows on
+
+# Reduce delay when pressing Esc (improves Vim/NeoVim responsiveness)
+set -s escape-time 0
+
+
+# ==========================
+# ===   Key Bindings     ===
+# ==========================
+
+# --- Split Panes ---
+# Split vertically (Left & Right) with Ctrl+b then |
+bind | split-window -h -c "#{pane_current_path}"
+
+# Split horizontally (Top & Bottom) with Ctrl+b then -
+bind - split-window -v -c "#{pane_current_path}"
+
+# Unbind the awkward default keys
+unbind '"'
+unbind %
+
+# --- Navigation ---
+# NOTE: The manual C-h/j/k/l bindings have been REMOVED.
+# The 'vim-tmux-navigator' plugin below now handles these keys smartly.
+
+# Restore Clear Screen (C-l)
+# Since the plugin uses C-l for navigation, use <prefix> C-l to clear screen
+bind C-l send-keys 'C-l'
+
+# --- Configuration Management ---
+# Reload config file quickly with 'r'
+bind r source-file ~/.tmux.conf \; display "Config reloaded!"
+
+
+# ==========================
+# ===   Status Bar UI    ===
+# === Catppuccin Mocha   ===
+# ==========================
+
+# Base status bar styling (Catppuccin Base: #1e1e2e)
+set -g status-style "bg=#1e1e2e,fg=#cdd6f4"
+set -g status-left-length 100
+set -g status-right-length 100
+
+# Left side: Session name with a classic Powerline arrow 
+# Catppuccin Blue (#89b4fa) to Base (#1e1e2e)
+set -g status-left "#[bg=#89b4fa,fg=#11111b,bold] 󰄛 #S #[bg=#1e1e2e,fg=#89b4fa,nobold] "
+
+# Right side: Date and Time + Hostname with Powerline arrows
+# Base -> Surface0 (#313244) -> Blue (#89b4fa)
+set -g status-right "#[bg=#1e1e2e,fg=#313244]#[bg=#313244,fg=#cdd6f4] %Y-%m-%d  %H:%M #[bg=#313244,fg=#89b4fa]#[bg=#89b4fa,fg=#11111b,bold] #h "
+
+# --- Window Tabs ---
+# Separator is handled within the format string for precise powerline coloring
+set -g window-status-separator ""
+
+# Inactive windows: Surface0 (#313244) with Powerline caps
+set -g window-status-format "#[fg=#1e1e2e,bg=#313244]#[fg=#bac2de,bg=#313244] #I  #W #[fg=#313244,bg=#1e1e2e]"
+
+# Active window: Mauve (#cba6f7) with Powerline caps
+set -g window-status-current-format "#[fg=#1e1e2e,bg=#cba6f7]#[fg=#11111b,bg=#cba6f7,bold] #I  #W #[fg=#cba6f7,bg=#1e1e2e,nobold]"
+
+
+# --- Pane Borders ---
+set -g pane-border-style "fg=#313244"
+set -g pane-active-border-style "fg=#cba6f7"
+
+# --- Message Styling ---
+set -g message-style "bg=#313244,fg=#cdd6f4,bold"
+
+
+# ==========================
+# ===   Plugins          ===
+# ==========================
+
+set -g @plugin 'tmux-plugins/tpm'
+set -g @plugin 'tmux-plugins/tmux-sensible'
+set -g @plugin 'christoomey/vim-tmux-navigator'
+
+
+# ==========================================
+# ===   Keep this at the very bottom     ===
+# ==========================================
+run '~/.tmux/plugins/tpm/tpm'

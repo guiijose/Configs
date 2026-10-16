@@ -1,0 +1,19 @@
+session_name: openlsd
+start_directory: /Users/guilhermejose/Repositories/OpenLSD
+
+windows:
+  - window_name: code 
+    panes:
+      - nvim .
+  - window_name: agy
+    panes:
+      - agy
+  - window_name: Shell 1 
+    panes:
+      - "open -a Docker; echo 'Waiting for Docker...'; while ! docker info >/dev/null 2>&1; do sleep 1; done; echo 'Starting Devcontainer...'; devcontainer up --workspace-folder . > /dev/null 2>&1; clear; devcontainer exec --workspace-folder . /bin/bash"
+  - window_name: Shell 2
+    panes:
+      - "open -a Docker; echo 'Waiting for Docker...'; while ! docker info >/dev/null 2>&1; do sleep 1; done; echo 'Starting Devcontainer...'; devcontainer up --workspace-folder . > /dev/null 2>&1; clear; devcontainer exec --workspace-folder . /bin/bash"
+  - window_name: Lazygit
+    panes:
+      - lazygit
